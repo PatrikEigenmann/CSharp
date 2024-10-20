@@ -1,0 +1,27 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Console/Calculator/bin/Debug/net8.0
+/Console/Calculator/obj
+*.csproj
+/Console/CompareVersion/bin/Debug/net8.0
+/Console/CompareVersion/obj
+/Console/Enigma/bin/Debug/net8.0
+/Console/Enigma/obj
+/Console/HelloWorld/bin/Debug/net8.0
+/Console/HelloWorld/obj
+/Console/Numbers/bin/Debug/net8.0
+/Console/Numbers/obj
+/Console/TicTacToeTest/bin/Debug/net8.0
+/Console/TicTacToeTest/obj
+/Library/Samael/bin/Debug/net8.0
+/Library/Samael/obj
+/WinForm/Enigma/bin/Debug/net8.0-windows
+/WinForm/Enigma/obj
+*.user
+/WinForm/HelloWorld/bin/Debug/net8.0-windows
+/WinForm/HelloWorld/obj
+/WinForm/TicTacToe/bin/Debug/net8.0-windows
+/WinForm/TicTacToe/obj
