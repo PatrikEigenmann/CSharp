@@ -1,19 +1,20 @@
-﻿/* -------------------------------------------------------------------------------------------------------
- * The Rotor class is an abstract representation of a rotor mechanism, commonly used in encryption devices
- * like the Enigma machine. It manages a rotor with a fixed alphabet length, tracks the number of turns,
- * and provides methods to manipulate and query the rotor’s state. The class includes methods to rotate
- * the rotor, reset it, and find the index of a character. The setAlphabet method is abstract, requiring
- * subclasses to define the specific alphabet used.
- * -------------------------------------------------------------------------------------------------------
+﻿/* -------------------------------------------------------------------------------------------------------------------
+ * The Rotor class is an abstract representation of a rotor mechanism, commonly used in encryption devices like the
+ * Enigma machine. It manages a rotor with a fixed alphabet length, tracks the number of turns, and provides methods
+ * to manipulate and query the rotor’s state. The class includes methods to rotate the rotor, reset it, and find the
+ * index of a character. The setAlphabet method is abstract, requiring subclasses to define the specific alphabet
+ * used.
+ * -------------------------------------------------------------------------------------------------------------------
  * Author:	Patrik Eigenmann
  * eMail:	p.eigenmann@gmx.net
- * -------------------------------------------------------------------------------------------------------
+ * -------------------------------------------------------------------------------------------------------------------
  * Change Log:
  * Sun 2024-09-01 File created.																            Version: 00.01
  * Sun 2024-09-01 Version control & getVersion implemented.									            Version: 00.02
  * Fri 2024-09-20 Version control changed to a static method.                                           Version: 00.03
  * Sat 2024-09-28 Extended the alphanumeric characters with Capitol letters, small letters and Numbers. Version: 00.04
- * -------------------------------------------------------------------------------------------------------*/
+ * Sun 2024-10-20 LogManager implemented.                                                               Version: 00.05
+ * ------------------------------------------------------------------------------------------------------------------- */
 using System;
 using Samael;
 
@@ -42,7 +43,9 @@ namespace Enigma
         /// </returns>
         public static string GetVersion()
         {
-            return VersionManager.GetInstance("Rotor", 0, 4).ToString();
+            /* Writing an info message into the log file. */
+            LogManager.WriteMessage("Version string created.", LogManager.INFO, typeof(EnigmaForm), typeof(Rotor));
+            return VersionManager.GetInstance("Rotor", 0, 5).ToString();
         }
 
         /// <summary>
@@ -71,6 +74,9 @@ namespace Enigma
         {
             turns = 0;
             SetAlphabet();
+
+            /* Writing an info message into the log file. */
+            LogManager.WriteMessage("Class Rotor initialized.", LogManager.INFO, typeof(EnigmaForm), typeof(Rotor));
         }
 
         /// <summary>
@@ -85,9 +91,15 @@ namespace Enigma
             for (int i = 0; i < AlphabetLength; i++)
             {
                 if (rotor[i] == c)
+                {
+                    /* Writing an info message into the log file. */
+                    LogManager.WriteMessage("Character found.", LogManager.INFO, typeof(EnigmaForm), typeof(Rotor));
                     return i;
+                }
             }
 
+            /* Writing an warning message into the log file. */
+            LogManager.WriteMessage("Character not found.", LogManager.WARNING, typeof(EnigmaForm), typeof(Rotor));
             return -1;
         }
 
@@ -99,6 +111,9 @@ namespace Enigma
         /// <returns>The haunting number of turns the rotor has endured.</returns>
         public int Turns()
         {
+            /* Writing an info message into the log file. */
+            LogManager.WriteMessage("Getting of turn count of the Rotor.", LogManager.INFO, typeof(EnigmaForm), typeof(Rotor));
+
             return turns;
         }
 
@@ -121,6 +136,9 @@ namespace Enigma
             rotor[AlphabetLength - 1] = c;
 
             turns++;
+
+            /* Writing an info message into the log file. */
+            LogManager.WriteMessage("Turning the rotor.", LogManager.INFO, typeof(EnigmaForm), typeof(Rotor));
         }
 
         /// <summary>
@@ -132,6 +150,9 @@ namespace Enigma
         /// <returns>The character residing at the distinguished position i in the rotor array.</returns>
         public char CharAt(int i)
         {
+            /* Writing an info message into the log file. */
+            LogManager.WriteMessage("Character at Position " + i + ".", LogManager.INFO, typeof(EnigmaForm), typeof(Rotor));
+
             return rotor[i];
         }
 
@@ -145,6 +166,9 @@ namespace Enigma
         {
             turns = 0;
             SetAlphabet();
+
+            /* Writing an info message into the log file. */
+            LogManager.WriteMessage("Rotor is reset to the initial state.", LogManager.INFO, typeof(EnigmaForm), typeof(Rotor));
         }
 
         /// <summary>

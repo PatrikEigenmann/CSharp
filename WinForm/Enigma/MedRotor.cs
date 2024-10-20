@@ -14,6 +14,7 @@
  * Fri 2024-09-20 Version control changed into a static method.                                         Version: 00.03
  * Sat 2024-09-28 Extended the alphanumeric characters with Capitol letters, small letters and Numbers. Version: 00.04
  * Mon 2024-09-30 Same rotor array like in the Java version.                                            Version: 00.05
+ * Sun 2024-10-20 LogManager implemented.                                                               Version: 00.06
  * -------------------------------------------------------------------------------------------------------------------*/
 using System;
 using Samael;
@@ -43,7 +44,9 @@ namespace Enigma
         /// </returns>
         public static new string GetVersion()
         {
-            return VersionManager.GetInstance("MedRotor", 0, 5).ToString();
+            /* Writing an info message into the log file. */
+            LogManager.WriteMessage("Version string created.", LogManager.INFO, typeof(EnigmaForm), typeof(MedRotor));
+            return VersionManager.GetInstance("MedRotor", 0, 6).ToString();
         }
 
         /// <summary>
@@ -118,6 +121,9 @@ namespace Enigma
             rotor[i++] = 'q';
             rotor[i++] = 'v';
             rotor[i] = '1';
+
+            /* Writing an info message into the log file. */
+            LogManager.WriteMessage("Medium Rotor initialized.", LogManager.INFO, typeof(EnigmaForm), typeof(MedRotor));
         }
     }
 }

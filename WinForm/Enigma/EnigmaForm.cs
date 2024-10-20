@@ -47,7 +47,15 @@
  * Implement a reset button or menu.                                                                        -> Done
  * Implement a configuration system. Samael.ConfigManager is the class and the .\config.xml the file.       -> Done
  * Implement a LogManager and Logging INFO, WARNING, and ERROR message. Update app Version                  -> Done
+ * -------------------------------------------------------------------------------------------------------------------
+ * Release Notes 00.01:
+ * 
+ * Sun 2024-10-20   -> Extended character in Rotors set with capitol and small letter and numbers now.  Version: 00.02
+ *                  -> AppVersion implemented like in the Java application.                             Version: 00.03
+ *                  -> App Title and version # are shown correctly now.                                 Version: 00.04
+ *                  -> LogManager implemented in Windows Form and all Rotors and tested out.            Version: 00.05
  * ------------------------------------------------------------------------------------------------------------------- */
+
 using System.Windows.Forms;
 using Samael;
 
@@ -79,7 +87,7 @@ namespace Enigma
         /// going from version 01.02 to 01.03 indicating a minor ubdate that enhances the existing version without
         /// breaking the compatibility.
         /// </summary>
-        private static int appMinor = 4;
+        private static int appMinor = 5;
 
 
         /// <summary>

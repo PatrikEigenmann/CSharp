@@ -26,7 +26,8 @@
  * -------------------------------------------------------------------------------------------------------
  * Change Log:
  * Thu 2024-09-19 File created & basic functionality implemented.                           Version: 00.01
- * -------------------------------------------------------------------------------------------------------*/
+ * Sun 2024-10-20 LogManager implemented.                                                   Version: 00.02
+ * ------------------------------------------------------------------------------------------------------- */
 using Samael;
 
 namespace Enigma
@@ -51,7 +52,7 @@ namespace Enigma
         [STAThread]
         static void Main()
         {
-            // 
+            // Set the LogManager with the flags to record.
             LogManager.Flag = LogManager.WARNING | LogManager.ERROR;
             
             // To customize application configuration such as set high DPI settings or default font,
