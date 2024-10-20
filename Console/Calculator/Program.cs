@@ -83,7 +83,7 @@ class Program
                     Console.WriteLine("Error! Division by zero is not allowed.");
                 }
                 break;
-            // This is just for test purposes.
+            
             // If for some reason the user pressed another operator than the four
             // basic arithmetic funcions +, -, *, /
             default:
