@@ -112,7 +112,7 @@ namespace Enigma
         public int Turns()
         {
             /* Writing an info message into the log file. */
-            LogManager.WriteMessage("Getting of turn count of the Rotor.", LogManager.INFO, typeof(EnigmaForm), typeof(Rotor));
+            LogManager.WriteMessage("Getting the turn count of the Rotor.", LogManager.INFO, typeof(EnigmaForm), typeof(Rotor));
 
             return turns;
         }
