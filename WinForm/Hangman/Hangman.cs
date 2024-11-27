@@ -23,6 +23,8 @@ namespace Hangman
         public Hangman()
         {
             InitializeComponent();
+            LoadWords();
+            StartGame();
         }
 
         private void LoadWords()
@@ -36,6 +38,7 @@ namespace Hangman
                     string[] wordArray = content.Split(',');
                     foreach (var word in wordArray)
                     {
+                        if(words == null) words = new List<string>();
                         words.Add(word.Trim().ToUpper()); // Convert to uppercase
                     }
                     messageLabel.Text = "Words loaded successfully!";
