@@ -1,20 +1,21 @@
-﻿/* -------------------------------------------------------------------------------------------------------
- * Engineered for unparalleled simplicity and efficiency, this cutting-edge tool empowers users to
- * seamlessly perform essential arithmetic operations. With an intuitive interface, users are guided to
- * input a number, select an operation—whether it’s addition, subtraction, multiplication, or division—and
- * then enter a second number. The calculator leverages advanced algorithms to deliver\precise results
- * instantaneously.
+﻿/* --------------------------------------------------------------------------------------------
+ * Engineered for unparalleled simplicity and efficiency, this cutting-edge tool empowers users
+ * to seamlessly perform essential arithmetic operations. With an intuitive interface, users are
+ * guided to input a number, select an operation—whether it’s addition, subtraction,
+ * multiplication, or division—and then enter a second number. The calculator leverages advanced
+ * algorithms to deliver\precise results instantaneously.
  * 
- * Elevate your computational capabilities with our state-of-the-art solution. Experience the next
- * generation of basic arithmetic with the Ultimate Console Calculator, where innovation meets precision.
- * -------------------------------------------------------------------------------------------------------
+ * Elevate your computational capabilities with our state-of-the-art solution. Experience the
+ * next generation of basic arithmetic with the Ultimate Console Calculator, where innovation
+ * meets precision.
+ * ---------------------------------------------------------------------------------------------
  * Author : Patrik Eigenmann
  * eMail  : p.eigenmann@gmx.net
- * -------------------------------------------------------------------------------------------------------
+ * ---------------------------------------------------------------------------------------------
  * Changelog
- * Fri 2023-12-22	File created														    Version 00.01
- * Tue 2024-09-24   Quick Fix CS8600 Null or possible null value to non-nullable type.      Version 00.02
- * ------------------------------------------------------------------------------------------------------- */
+ * Fri 2023-12-22	File created												    Version 00.01
+ * Tue 2024-09-24   Quick Fix CS8600 Null or possible null value.                   Version 00.02
+ * --------------------------------------------------------------------------------------------- */
 using System;
 
 namespace Calculator;
