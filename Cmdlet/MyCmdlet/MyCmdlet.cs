@@ -1,9 +1,9 @@
 ﻿
 using System.Management.Automation;
 
-namespace MyCustomCmdlet
+namespace MyCmdlet
 {
-    [Cmdlet(VerbsCommon.Get, "CustomData")]
+    [Cmdlet(VerbsCommon.Get, "Greeting")]
     public class MyCmdlet : Cmdlet
     {
 
