@@ -24,7 +24,7 @@ namespace HelloWorld
     /// with its features, significantly improves the user experience, making our application more intuitive
     /// and user-friendly.
     /// </summary>
-    public partial class Form1 : Form, IVersionable
+    public partial class Form1 : Form
     {
         /// <summary>
         /// The GetVersion method is a vital feature for any class implementing the IVersionable interface.
