@@ -5,7 +5,7 @@ using Samael;
 
 namespace HelloWorld
 {
-    class Cat : Animal, IVersionable, ITest
+    class Cat : Animal, ITest
     {
         public static new void Test()
         {

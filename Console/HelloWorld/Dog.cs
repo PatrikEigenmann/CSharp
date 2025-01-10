@@ -3,7 +3,7 @@ using Samael;
 
 namespace HelloWorld
 {
-    public class Dog : Animal, IVersionable, ITest
+    public class Dog : Animal, ITest
     {
         public string GetVersion()
         {
