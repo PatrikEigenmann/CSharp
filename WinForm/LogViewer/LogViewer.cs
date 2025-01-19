@@ -14,8 +14,9 @@
  * particular modules, our advanced filtering system ensures you can quickly and effortlessly
  * extract valuable insights from your data.
  * -----------------------------------------------------------------------------------------------
- * Author:	Patrik Eigenmann
- * eMail:	p.eigenmann@gmx.net
+ * Author : Patrik Eigenmann
+ * eMail  : p.eigenmann@gmx.net
+ * GitHub : www.github.com/PatrikEigenmann/CSharp
  * -----------------------------------------------------------------------------------------------
  * Change Log:
  * Tue 2025-01-15 File created.													    Version: 00.01
