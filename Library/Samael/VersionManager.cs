@@ -1,28 +1,29 @@
-﻿/* ------------------------------------------------------------------------------------------------------------------
+﻿/* -------------------------------------------------------------------------------------------------
  * The VersionManager class is designed to manage and track different versions of software components.
  * It maintains a centralized list of versions, ensuring that each component’s version is easily
  * accessible. When a version is requested, the class checks if it already exists; if not, it creates
  * and stores a new version. This approach ensures consistency and reliability in version management,
  * making it easier to maintain and update software systems. Additionally, the class includes error
  * handling to manage any issues that might arise during version retrieval.
- * ------------------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------------------------------------
  * Author : Patrik Eigenmann
  * eMail  : p.eigenmann@gmx.net
- * ------------------------------------------------------------------------------------------------------------------
+ * GitHub : www.github.com/PatrikEigenmann/CSharp
+ * --------------------------------------------------------------------------------------------------
  * Changelog
- * Wed 2024-09-18	File created & basic implementation created.						                Version 00.01
- * Fri 2024-09-20   Version control implemented.                                                        Version 00.02
- * Fri 2024-09-20   Version control changed to static.                                                  Version 00.03
- * Mon 2024-09-23   Fixed a possible null reference to a non-nullable instance.                         Version 00.04
- * Mon 2024-09-23   Implemented frameworkVersion as a const string.                                     Version 00.05
- * Wed 2024-10-02   ConfigManager added.                                                                Version 00.06
- * Thu 2024-10-10   LogManager added.                                                                   Version 00.07
- * ------------------------------------------------------------------------------------------------------------------
+ * Wed 2024-09-18	File created & basic implementation created.                        Version 00.01
+ * Fri 2024-09-20   Version control implemented.                                        Version 00.02
+ * Fri 2024-09-20   Version control changed to static.                                  Version 00.03
+ * Mon 2024-09-23   Fixed a possible null reference to a non-nullable instance.         Version 00.04
+ * Mon 2024-09-23   Implemented frameworkVersion as a const string.                     Version 00.05
+ * Wed 2024-10-02   ConfigManager added.                                                Version 00.06
+ * Thu 2024-10-10   LogManager added.                                                   Version 00.07
+ * ---------------------------------------------------------------------------------------------------
  * To Do:
- * - Implementing a constant of the Samael framework version string.                                        -> Done
- * - Adding the class ConfigManager to the framework, updating the version string.                          -> Done
- * - Adding the class LogManager to the framework, updating the version string.                             -> Done
- * ------------------------------------------------------------------------------------------------------------------*/
+ * - Implementing a constant of the Samael framework version string.                            -> Done
+ * - Adding the class ConfigManager to the framework, updating the version string.              -> Done
+ * - Adding the class LogManager to the framework, updating the version string.                 -> Done
+ * --------------------------------------------------------------------------------------------------- */
 using System;
 using System.Collections;
 
@@ -38,7 +39,9 @@ namespace Samael
     /// </summary>
     public class VersionManager : IVersionable
     {
-
+        /// <summary>
+        /// 
+        /// </summary>
         private const string frameworkVersion = "Samael Framework v00.03";
 
         /// <summary>

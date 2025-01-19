@@ -53,7 +53,7 @@ namespace Enigma
         static void Main()
         {
             // Set the LogManager with the flags to record.
-            LogManager.Flag = LogManager.WARNING | LogManager.ERROR;
+            LogManager.Flag = LogManager.WARNING | LogManager.ERROR | LogManager.INFO;
             
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.

@@ -124,7 +124,7 @@ namespace Samael
                 StreamWriter? outStream = null;
                 try
                 {
-                    string logFile = Path.Combine(LOG_DIR, "samael.csv");
+                    string logFile = Path.Combine(LOG_DIR, "samael.log");
                     outStream = new StreamWriter(new FileStream(logFile, FileMode.Append, FileAccess.Write));
 
                     string sDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
