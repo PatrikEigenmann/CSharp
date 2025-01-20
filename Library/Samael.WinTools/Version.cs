@@ -55,7 +55,7 @@ namespace Samael.WinTools
         /// </summary>
         private void SetVersion()
         {
-            VersionManager.Instance.RegisterVersion(Component, Major, Minor);
+            //VersionManager.Instance.RegisterVersion(Component, Major, Minor);
         }
 
         /// <summary>

@@ -22,6 +22,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace Samael.WinTools
 {
@@ -33,8 +34,9 @@ namespace Samael.WinTools
     /// making it easier to maintain and update software systems. Additionally, the class includes error
     /// handling to manage any issues that might arise during version retrieval.
     /// </summary>
-    public class VersionManager : IVersionable
+    public class VersionManager // : IVersionable
     {
+        /*
         #region Framework Version
 
         /// <summary>
@@ -211,6 +213,23 @@ namespace Samael.WinTools
             return versionString;
         }
         #endregion
+        */
+
+        public static string GetVersionString()
+        {
+            string text = "Samael.WinTools Framework v 00.01\n";
+
+            text += "\n";
+            text += "- VersionManager v 00.02 Reduced functionality.\n";
+            text += "- Version        v 00.01 Currently deactivated.\n";
+            text += "- IVersionable   v 00.02 Reduced functionality.\n";
+            text += "- ComboBoxDialog v 00.02\n";
+            text += "- TextBoxDialog  v 00.01\n";
+            text += "- InfoBoxDialog  v 00.01\n";
+            text += "\n";
+
+            return text;
+        }
 
     }
 }

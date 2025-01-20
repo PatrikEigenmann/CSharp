@@ -75,7 +75,7 @@ namespace LogViewer
         {
             get
             {
-                return $"{Major:D2}.{Minor:D2}";
+                return $"LogViewer v{Major:D2}.{Minor:D2}";
             }
         }
 
@@ -97,6 +97,8 @@ namespace LogViewer
             // Set the title of the form
             Text = $"Log Viewer {Version}";
 
+            Font = new Font("Courier New", 10);
+
             // Initialize all the other components
             InitializeComponent();
 
@@ -110,7 +112,7 @@ namespace LogViewer
                 LogDir = "/usr/local/samael/logs";
             }
 
-            loadLog();
+            LoadLog();
         }
 
         /// <summary>
@@ -120,9 +122,9 @@ namespace LogViewer
         /// </summary>
         /// <param name="sender">The source of the event (typically a control).</param>
         /// <param name="e">An EventArgs object containing event data.</param>
-        private void loadLog(object sender, EventArgs e)
+        private void LoadLog(object sender, EventArgs e)
         {
-            loadLog();
+            LoadLog();
         }
 
         /// <summary>
@@ -130,7 +132,7 @@ namespace LogViewer
         /// from the specified log directory. This method processes and displays
         /// the log data within the application.
         /// </summary>
-        private void loadLog()
+        private void LoadLog()
         {
             string logFilePath = Path.Combine(LogDir, "samael.log");
 
@@ -168,6 +170,13 @@ namespace LogViewer
 
             // Bind the DataTable to the DataGridView
             logData.DataSource = dataTable;
+
+            logData.Columns[0].Width = 310;
+            logData.Columns[1].Width = 200;
+            logData.Columns[2].Width = 250;
+            logData.Columns[3].Width = 100;
+            logData.Columns[4].Width = 760;
+
         }
 
         /// <summary>
@@ -178,10 +187,18 @@ namespace LogViewer
         /// </summary>
         /// <param name="sender">The source of the event (typically a control).</param>
         /// <param name="e">An EventArgs object containing event data.</param>
-        private void filterLog(object sender, EventArgs e)
+        private void FilterLog(object sender, EventArgs e)
         {
-            loadLog();
+            LoadLog();
 
+            FilterLog();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void FilterLog()
+        {
             string? filter = ShowFilterDialog();
 
             if (filter != null)
@@ -230,7 +247,15 @@ namespace LogViewer
         /// </summary>
         /// <param name="sender">The source of the event (typically a control).</param>
         /// <param name="e">An EventArgs object containing event data.</param>
-        private void clearLog(object sender, EventArgs e)
+        private void ClearLog(object sender, EventArgs e)
+        {
+            ClearLog();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private void ClearLog()
         {
             try
             {
@@ -240,7 +265,7 @@ namespace LogViewer
                 File.WriteAllText(logFilePath, string.Empty);
 
                 // Reload the log to reflect the changes
-                loadLog();
+                LoadLog();
             }
             catch (Exception ex)
             {
@@ -254,13 +279,62 @@ namespace LogViewer
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AboutLog(object sender, EventArgs e)
         {
-            string text = "Text Text Text\n";
+            AboutLog();
+        }
 
-            text += VersionManager.Instance.GetVersionString();
+        /// <summary>
+        /// 
+        /// </summary>
+        private void AboutLog()
+        {
+            string text = this.Version + "\n";
 
-            MessageBox.Show(text, "About Log Viewer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            text += "--------------------------------------------------\n";
+            text += VersionManager.GetVersionString();
+
+            using (Samael.WinTools.InfoBoxDialog aboutDialog = new Samael.WinTools.InfoBoxDialog("About", text, new Font("Courier New", 10)))
+            {
+                aboutDialog.ShowDialog();
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SearchLog(object sender, EventArgs e)
+        {
+            LoadLog();
+
+            SearchLog();
+        }
+
+        private void SearchLog()
+        {
+            string searchText = string.Empty;
+
+            using (Samael.WinTools.TextBoxDialog searchDialog = new Samael.WinTools.TextBoxDialog("Search Dialog", "Please enter your search text:"))
+            {
+                if (searchDialog.ShowDialog() == DialogResult.OK)
+                {
+                    searchText = searchDialog.SelectedText;
+                }
+            }
+
+            // Now lets perform the search
+            if (!string.IsNullOrEmpty(searchText))
+            {
+                DataTable dataTable = (DataTable)logData.DataSource;
+                if (dataTable != null)
+                {
+                    DataView dataView = new DataView(dataTable);
+                    dataView.RowFilter = $"Message LIKE '%{searchText}%'";
+                    logData.DataSource = dataView;
+                }
+            }
         }
     }
 }
