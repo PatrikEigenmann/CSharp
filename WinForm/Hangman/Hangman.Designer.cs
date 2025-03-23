@@ -36,80 +36,81 @@ namespace Hangman
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel = new System.Windows.Forms.Panel();
-            this.wordLabel = new System.Windows.Forms.Label();
-            this.guessField = new System.Windows.Forms.TextBox();
-            this.guessButton = new System.Windows.Forms.Button();
-            this.messageLabel = new System.Windows.Forms.Label();
-            this.hangmanPanel = new HangmanPanel();
-            this.panel.SuspendLayout();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hangman));
+            panel = new Panel();
+            wordLabel = new Label();
+            guessField = new TextBox();
+            guessButton = new Button();
+            messageLabel = new Label();
+            hangmanPanel = new HangmanPanel();
+            panel.SuspendLayout();
+            SuspendLayout();
             // 
             // panel
             // 
-            this.panel.Controls.Add(this.wordLabel);
-            this.panel.Controls.Add(this.guessField);
-            this.panel.Controls.Add(this.guessButton);
-            this.panel.Controls.Add(this.messageLabel);
-            this.panel.Controls.Add(this.hangmanPanel);
-            this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel.Location = new System.Drawing.Point(0, 0);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(640, 319);
-            this.panel.TabIndex = 0;
+            panel.Controls.Add(wordLabel);
+            panel.Controls.Add(guessField);
+            panel.Controls.Add(guessButton);
+            panel.Controls.Add(messageLabel);
+            panel.Controls.Add(hangmanPanel);
+            panel.Dock = DockStyle.Fill;
+            panel.Location = new Point(0, 0);
+            panel.Name = "panel";
+            panel.Size = new Size(640, 319);
+            panel.TabIndex = 0;
             // 
             // wordLabel
             // 
-            this.wordLabel.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wordLabel.Location = new System.Drawing.Point(10, 10);
-            this.wordLabel.Name = "wordLabel";
-            this.wordLabel.Size = new System.Drawing.Size(300, 30);
-            this.wordLabel.TabIndex = 0;
+            wordLabel.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            wordLabel.Location = new Point(10, 10);
+            wordLabel.Name = "wordLabel";
+            wordLabel.Size = new Size(300, 30);
+            wordLabel.TabIndex = 0;
             // 
             // guessField
             // 
-            this.guessField.Font = new System.Drawing.Font("Microsoft YaHei UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guessField.Location = new System.Drawing.Point(10, 50);
-            this.guessField.Name = "guessField";
-            this.guessField.Size = new System.Drawing.Size(172, 27);
-            this.guessField.TabIndex = 1;
-            this.guessField.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GuessField_KeyDown);
+            guessField.Font = new Font("Microsoft YaHei UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guessField.Location = new Point(10, 50);
+            guessField.Name = "guessField";
+            guessField.Size = new Size(141, 46);
+            guessField.TabIndex = 1;
+            guessField.KeyDown += GuessField_KeyDown;
             // 
             // guessButton
             // 
-            this.guessButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guessButton.Location = new System.Drawing.Point(188, 50);
-            this.guessButton.Name = "guessButton";
-            this.guessButton.Size = new System.Drawing.Size(122, 30);
-            this.guessButton.TabIndex = 2;
-            this.guessButton.Text = "Guess";
-            this.guessButton.Click += new System.EventHandler(this.GuessButton_Click);
+            guessButton.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guessButton.Location = new Point(157, 50);
+            guessButton.Name = "guessButton";
+            guessButton.Size = new Size(157, 46);
+            guessButton.TabIndex = 2;
+            guessButton.Text = "Guess";
+            guessButton.Click += GuessButton_Click;
             // 
             // messageLabel
             // 
-            this.messageLabel.Font = new System.Drawing.Font("Segoe Script", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.messageLabel.Location = new System.Drawing.Point(10, 90);
-            this.messageLabel.Name = "messageLabel";
-            this.messageLabel.Size = new System.Drawing.Size(300, 220);
-            this.messageLabel.TabIndex = 3;
+            messageLabel.Font = new Font("Segoe Script", 10.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            messageLabel.Location = new Point(10, 114);
+            messageLabel.Name = "messageLabel";
+            messageLabel.Size = new Size(300, 196);
+            messageLabel.TabIndex = 3;
             // 
             // hangmanPanel
             // 
-            this.hangmanPanel.Location = new System.Drawing.Point(320, 10);
-            this.hangmanPanel.Name = "hangmanPanel";
-            this.hangmanPanel.Size = new System.Drawing.Size(300, 300);
-            this.hangmanPanel.TabIndex = 4;
+            hangmanPanel.Location = new Point(320, 10);
+            hangmanPanel.Name = "hangmanPanel";
+            hangmanPanel.Size = new Size(300, 300);
+            hangmanPanel.TabIndex = 4;
             // 
             // Hangman
             // 
-            this.ClientSize = new System.Drawing.Size(640, 319);
-            this.Controls.Add(this.panel);
-            this.Name = "Hangman";
-            this.Text = "Hangman Game";
-            this.panel.ResumeLayout(false);
-            this.panel.PerformLayout();
-            this.ResumeLayout(false);
-
+            ClientSize = new Size(640, 319);
+            Controls.Add(panel);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "Hangman";
+            Text = "Hangman Game";
+            panel.ResumeLayout(false);
+            panel.PerformLayout();
+            ResumeLayout(false);
         }
         #endregion
     }

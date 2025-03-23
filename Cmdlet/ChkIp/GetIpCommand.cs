@@ -7,6 +7,7 @@
  * ----------------------------------------------------------------------------------
  * Author:  Patrik Eigenmann
  * eMail:   p.eigenmann@gmx.net
+ * GitHub:  www.github.com/PatrikEigenmann/CSharp
  * ----------------------------------------------------------------------------------
  * Change Log:
  * Fri 2025-01-10 File created & basic implementation created.          Version 00.01
